@@ -1,0 +1,1 @@
+{"name":"Local: 10_Rotten_Oranges","url":"c:\\_Vatsh\\_Blossom\\DSA\\DSA Striever\\Graphs\\10_Rotten_Oranges.cpp","tests":[{"id":1717030160314,"input":"1\n3 3\n0 1 2 \n0 1 2 \n2 1 1","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\_Vatsh\\_Blossom\\DSA\\DSA Striever\\Graphs\\10_Rotten_Oranges.cpp","group":"local","local":true}

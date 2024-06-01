@@ -1,4 +1,5 @@
 // https://www.geeksforgeeks.org/problems/number-of-provinces/1
+// https://leetcode.com/problems/count-the-number-of-complete-components/description/
 // Number of Provinces
 // A province is a group of directly or indirectly connected cities and no other cities outside of the group
 
@@ -7,7 +8,7 @@ using namespace std;
 
 class Solution
 {
-    void dfs(int node, vector<vector<int>> graph, vector<bool> &visited)
+    void dfs(int node, vector<vector<int>> graph, vector<bool> &visited) // O(N)+O(v+2e)
     {
         visited[node] = true;
         for (auto it : graph[node])
