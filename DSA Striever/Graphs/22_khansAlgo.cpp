@@ -1,5 +1,11 @@
 // https://www.geeksforgeeks.org/problems/topological-sort/1
-// Topological sort
+//^ Khans's Algorithm
+    /*
+    & 1: insert all nodes with inDegree 0
+    & 2: from those node move to others and decrease their inDegree
+    & 3: if their inDegree become 0 push to result else push in queue
+    % inDegree ensures no node visited extra times
+    */
 // ! only in DAG - directed Acyclic graph
 
 //{ Driver Code Starts
@@ -8,37 +14,36 @@ using namespace std;
 
 // } Driver Code Ends
 
-class Solution
+class Solution // sc:(v) tc(v+e)
 {
-    void dfs(int node, vector<int> &vis, vector<int> adj[], stack<int> &st) // O(V+E)
+    vector<int> bfs(int V, vector<int> adj[])
     {
-        vis[node] = 1;
-        for (int i = 0; i < adj[node].size(); i++)
+        vector<int> res;
+        vector<int> inDegree(V, 0);
+
+        for (int i = 0; i < V; i++)
+            for (int nbr : adj[i])
+                inDegree[nbr]++;
+
+        queue<int> q;
+        for (int i = 0; i < V; i++)
+            if (inDegree[i] == 0)
+                q.push(i);
+
+        while (!q.empty())
         {
-            if (!vis[adj[node][i]])
+            int curr = q.front();
+            q.pop();
+            res.push_back(curr);
+
+            for (int nbr : adj[curr])
             {
-                dfs(adj[node][i], vis, adj, st);
+                inDegree[nbr]--;
+                if (inDegree[nbr] == 0)
+                    q.push(nbr);
             }
         }
-        st.push(node);
-    }
-
-    vector<int> solve(int V, vector<int> adj[])
-    {
-        vector<int> ans;
-        stack<int> st;
-        vector<int> vis(V, 0);
-        for (int i = 0; i < V; i++)
-            if (!vis[i])
-                dfs(i, vis, adj, st);
-
-        while (!st.empty())
-        {
-            ans.push_back(st.top());
-            // cout << st.top() << " ";
-            st.pop();
-        }
-        return ans;
+        return res;
     }
 
 public:
@@ -46,7 +51,7 @@ public:
     vector<int> topoSort(int V, vector<int> adj[])
     {
         // code here
-        return solve(V, adj);
+        return bfs(V, adj);
     }
 };
 

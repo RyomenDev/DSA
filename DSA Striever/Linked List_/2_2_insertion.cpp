@@ -34,6 +34,7 @@ void insertAtBegin(Node *&head, int data)
     temp->next = head;
     head = temp;
 }
+
 void insertAtEnd(Node *&head, int data)
 {
     Node *temp = new Node(data);
