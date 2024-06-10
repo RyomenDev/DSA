@@ -14,12 +14,17 @@
 
 /*
 & trick
-    1: try to represent the problem in terms of index.
-    2: do all possible stuffs on that and in according to problem.
-    3: if question says count all ways - sumUp all stuffs.
-    4: if question says minimum - take min of stuffs. (similarly max)
+    ^ 1: try to represent the problem in terms of index.
+    ^ 2: do all possible stuffs on that and in according to problem.
+    ^ 3: if question says count all ways - sumUp all stuffs.
+    ^ 4: if question says minimum - take min of stuffs. (similarly max)
 */
-
+/*
+& memoization to tabulation
+    ^ 1: declare base case
+    ^ 2: express various(all) states in for loop
+    ^ 3: copy the recurrence and write
+*/
 //{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
