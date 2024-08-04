@@ -10,7 +10,7 @@ using namespace std;
 #define vvi vector<vector<int>>
 class Solution
 {
-    int bfs(vvi &grid)
+    int bfs(vvi& grid)
     {
         int ans = 0;
         int r = grid.size(), c = grid[0].size();
@@ -66,7 +66,7 @@ class Solution
 
 public:
     // Function to find minimum time required to rot all oranges.
-    int orangesRotting(vector<vector<int>> &grid)
+    int orangesRotting(vector<vector<int>>& grid)
     {
         // Code here
         return bfs(grid);

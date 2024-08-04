@@ -58,7 +58,7 @@ class Solution
     }
 
 public:
-    vvi floodFill(vvi &image, int sr, int sc, int color)
+    vvi floodFill(vvi& image, int sr, int sc, int color)
     {
         // Code here
         ans = image;

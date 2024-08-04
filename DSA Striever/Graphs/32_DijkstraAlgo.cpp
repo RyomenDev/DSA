@@ -4,8 +4,6 @@
 /*
 & 1: maintain a min-heap priority queue (pair{distance,node}): sorter distance at top
 & 2: assign 0 to source node and rest with infinite value
-&
-&
 */
 // ^ Shortest Path
 
@@ -22,7 +20,7 @@ public:
     vector<int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
         // Code here
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq; // min-heap
         vector<int> dist(V, 1e9);
         dist[S] = 0;
         pq.push({0, S});

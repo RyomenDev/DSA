@@ -1,4 +1,4 @@
-// depth first search
+ // depth first search
 // https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/0
 
 #include <bits/stdc++.h>
