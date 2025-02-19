@@ -10,9 +10,10 @@ int fib(int n)
     if (n == 0 || n == 1)
         return n;
     int last = fib(n - 1);
-    int secondLast = fib(n - 2);
-    int ans = last + secondLast;
-    return ans;
+    // int secondLast = fib(n - 2);
+    // int ans = last + secondLast;
+    // return ans;
+    return fib(n-1)+fib(n-2);
 }
 
 int main()
