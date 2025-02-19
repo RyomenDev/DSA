@@ -194,62 +194,63 @@ void explain_vetors()
             cout << endl;
         }
         {
-            {it = v1.begin();
-        v1.erase(it); // remove elements one by one
-        for (auto it : v1)
-        {
-            cout << (it) << " "; // 2 3 7 7 9 4
-        }
-        cout << endl;
-
-        {
-            auto it1 = v1.begin();
-            auto it2 = it1 + 5;
-            it1 = it1 + 2;
-            v1.erase(it1, it2); // remove elements within range
-            for (auto it : v1)
             {
-                cout << (it) << " "; // 2 3 4
+                it = v1.begin();
+                v1.erase(it); // remove elements one by one
+                for (auto it : v1)
+                {
+                    cout << (it) << " "; // 2 3 7 7 9 4
+                }
+                cout << endl;
+
+                {
+                    auto it1 = v1.begin();
+                    auto it2 = it1 + 5;
+                    it1 = it1 + 2;
+                    v1.erase(it1, it2); // remove elements within range
+                    for (auto it : v1)
+                    {
+                        cout << (it) << " "; // 2 3 4
+                    }
+                    cout << endl;
+                }
             }
-            cout << endl;
         }
-    }
-}
-{
-    {
-        v1.emplace(v1.begin() + 1, 9); //(const_iterator_position,element)
-        for (auto it : v1)
         {
-            cout << (it) << " "; // 2 9 3 4
+            {
+                v1.emplace(v1.begin() + 1, 9); //(const_iterator_position,element)
+                for (auto it : v1)
+                {
+                    cout << (it) << " "; // 2 9 3 4
+                }
+                cout << endl;
+            }
+            {
+                v1.emplace_back(7); // added at end of vector
+                for (auto it : v1)
+                {
+                    cout << (it) << " "; // 2 9 3 4 7
+                }
+                cout << endl;
+            }
         }
-        cout << endl;
     }
-    {
-        v1.emplace_back(7); // added at end of vector
-        for (auto it : v1)
-        {
-            cout << (it) << " "; // 2 9 3 4 7
-        }
-        cout << endl;
-    }
-}
-}
 
-//
+    //
 
-//
- 
+    //
 
-vector<pair<int, int>> v2;
-v2.push_back({1, 2});
-v2.emplace_back(1, 2);
-v2.emplace_back(3, 4);
 
-vector<int> v3(5, 100);
-vector<int> v4(5);
+    vector<pair<int, int>> v2;
+    v2.push_back({1, 2});
+    v2.emplace_back(1, 2);
+    v2.emplace_back(3, 4);
 
-vector<int> v5(5, 20);
-vector<int> v6(v4);
+    vector<int> v3(5, 100);
+    vector<int> v4(5);
+
+    vector<int> v5(5, 20);
+    vector<int> v6(v4);
 }
 
 int main()
