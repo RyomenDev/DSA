@@ -1,4 +1,4 @@
-https://www.geeksforgeeks.org/problems/subset-sums2234/1
+// https://www.geeksforgeeks.org/problems/subset-sums2234/1
 class Solution
 {
     vector<vector<int>> res;

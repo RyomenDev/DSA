@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// merge sort using recursion
+// merge sort without using recursion
 
 void merge(int arr[], int l, int r)
 {
@@ -9,7 +9,8 @@ void merge(int arr[], int l, int r)
     int n1 = m - l + 1;
     int n2 = r - m;
 
-    int L[n1], R[n2];
+    // int L[n1], R[n2];
+    vector<int> L(n1), R(n2);
 
     for (int i = 0; i < n1; i++)
         L[i] = arr[l + i];
