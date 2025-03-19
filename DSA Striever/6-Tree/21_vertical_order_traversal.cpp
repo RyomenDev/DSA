@@ -40,3 +40,34 @@ public:
         return ans;
     }
 };
+
+// 
+
+//
+ 
+// 
+
+class Solution {
+    map<int, map<int, multiset<int>>> nodes;  // {col -> {row -> {values}}}
+    void inOrder(TreeNode* root, int col, int row) {
+        if (!root) return;
+        inOrder(root->left, col - 1, row + 1);
+        nodes[col][row].insert(root->val);
+        inOrder(root->right, col + 1, row + 1);
+    }
+public:
+    vector<vector<int>> verticalTraversal(TreeNode* root) {
+        vector<vector<int>> ans;
+        if (!root)
+            return ans;
+        inOrder(root, 0, 0);
+        for (auto [col, rowMap] : nodes) {
+            vector<int> colVals;
+            for (auto [row, vals] : rowMap)
+                colVals.insert(colVals.end(), vals.begin(), vals.end());
+            ans.push_back(colVals);
+        }
+        nodes.clear();
+        return ans;
+    }
+};
