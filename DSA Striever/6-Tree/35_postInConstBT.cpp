@@ -3,7 +3,6 @@ https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-t
 // ! Construct the Binary Tree from Postorder and Inorder Traversal
 
 // ^ Unique values
-/*
 class Solution {
     TreeNode* solve(int postStart, int postEnd, vector<int>& postOrder,
                     int inStart, int inEnd, vector<int>& inOrder,
@@ -35,7 +34,7 @@ public:
         return solve(0, n - 1, postorder, 0, n - 1, inorder, mp);
     }
 };
-*/
+
 
 // ^ Unique values
 //{ Driver Code Starts
