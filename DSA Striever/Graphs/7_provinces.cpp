@@ -3,6 +3,46 @@
 // Number of Provinces
 // A province is a group of directly or indirectly connected cities and no other cities outside of the group
 
+class Solution {
+    void dfs(int idx, vector<int>& vis, vector<vector<int>>& grid, int& nodes, int& edges) {
+        if (vis[idx]) return;
+        vis[idx] = 1;
+        nodes++; // Counting nodes in this component
+        edges += grid[idx].size(); // Counting edges (will be divided by 2 later)
+
+        for (auto i : grid[idx])
+            if (!vis[i]) dfs(i, vis, grid, nodes, edges);
+    }
+
+public:
+    int countCompleteComponents(int n, vector<vector<int>>& edges) {
+        vector<vector<int>> grid(n);
+        for (auto& i : edges) {
+            int a = i[0], b = i[1];
+            grid[a].push_back(b);
+            grid[b].push_back(a);
+        }
+
+        vector<int> vis(n, 0);
+        int completeCount = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (!vis[i]) {
+                int nodes = 0, edges = 0;
+                dfs(i, vis, grid, nodes, edges);
+                // Each edge is counted twice in an undirected graph
+                edges /= 2;
+                // A complete graph with 'nodes' vertices should have 'nodes * (nodes - 1) / 2' edges
+                if (edges == (nodes * (nodes - 1)) / 2)
+                    completeCount++;
+            }
+        }
+
+        return completeCount;
+    }
+};
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
