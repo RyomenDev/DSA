@@ -1,5 +1,7 @@
-// Detect cycle in a directed graph using DFS
 
+// https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+
+// Detect cycle in a directed graph using DFS
 // ! BFS logic will not work-> khan's algo and topological sort is used
 
 class Solution {
