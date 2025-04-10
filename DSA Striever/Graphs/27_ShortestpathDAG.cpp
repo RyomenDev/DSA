@@ -30,7 +30,7 @@ public:
         while (!st.empty()) {
             int node = st.top();
             st.pop();
-            if (dist[node] != INT_MAX) {
+            // if (dist[node] != INT_MAX) {
                 for (auto it : graph[node]) {
                     dist[it.first] = min(dist[it.first], dist[node] + it.second);
                     // int v = it.first;
@@ -38,7 +38,7 @@ public:
                     // if (dist[node] + wt < dist[v])
                     //     dist[v] = dist[node] + wt;
                 }
-            }
+            // }
         }
         for (int i = 0; i < V; i++)
             if (dist[i] == INT_MAX)
